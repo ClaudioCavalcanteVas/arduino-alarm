@@ -24,8 +24,10 @@ class BuzzerAlarm {
 
   public:
     BuzzerAlarm(byte pin);
+    int timesPlayed;
     void beep(); // active/inactive beep base on beeped var
     void wakeUp(); // run the alarm
+    void stop();
 };
 
 #endif

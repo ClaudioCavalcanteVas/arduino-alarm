@@ -29,6 +29,8 @@ void BuzzerAlarm::init() {
   melody[2] = NOTE_G4;
   melody[3] = NOTE_C5;
 
+  timesPlayed = 0;
+
   khzToBeep = 1000;
 }
 
@@ -57,6 +59,8 @@ void BuzzerAlarm::wakeUp() {
       lastBeep = now;
 
       lastPause = now; 
+      
+      timesPlayed++;
 
       notePlayed = 0;
     };
@@ -68,4 +72,8 @@ void BuzzerAlarm::wakeUp() {
     beep();
 
   }
+}
+
+void BuzzerAlarm::stop() {
+  init();
 }
